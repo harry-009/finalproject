@@ -19,7 +19,7 @@ export class UserService {
     }
 
     private getHeaders() {
-        let token = 'VCFaKw0kWKPOYubQDRgAzDjDiUDLqYj6';
+        let token = localStorage.getItem("access_token");;
 
         const headerDict = {
             //'Content-Type': 'application/json',

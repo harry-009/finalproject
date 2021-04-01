@@ -14,6 +14,13 @@ export class AuthService {
 		let api = `http://198.251.65.146:4605/adminsignin`
 		
 		return this.httpClient.post<Auth>(api, {email: email, password: password});
-							
+	}
+
+	forgotPassword( email: string ){
+		let api = `http://198.251.65.146:4605/forgotpassword`;
+
+		let body = {"email": email}
+		
+		return this.httpClient.post(api, body);
 	}
 }
