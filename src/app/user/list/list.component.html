@@ -1,1 +1,24 @@
-<p>list works!</p>
+<h2>Users List</h2>
+
+<h3>Total users: {{response?.total}}</h3>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{u?.firstName}}</td>
+        <td>{{u?.lastName}}</td>
+        <td>{{u?.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+<!-- <ul>
+    <li *ngFor="let u of users">
+        {{u?.firstName}}
+    </li>
+</ul> -->

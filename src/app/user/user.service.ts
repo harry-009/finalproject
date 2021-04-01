@@ -19,15 +19,15 @@ export class UserService {
     }
 
     private getHeaders() {
-        let token = 'Ef2bR36NrEa0t5apFnOYm0ZewwS8UGxU';
+        let token = 'VCFaKw0kWKPOYubQDRgAzDjDiUDLqYj6';
 
         const headerDict = {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-            'Access-Control-Allow-Headers': 'Content-Type',
-            'Access-Control-Allow-Origin': '*',
+            //'Content-Type': 'application/json',
+            //'Accept': 'application/json',
+            //'Access-Control-Allow-Headers': 'Content-Type',
+            //'Access-Control-Allow-Origin': '*',
             'Authorization': `Bearer ${token}`,
-            'Cookie': 'sails.sid=s%3AK_iBFKB4q4gBOQ9YDaHT8ksqKl4uRkXe.wdp2PBXGFra3CVv09SVoPMkL%2BV4GmoyxQpX0XSeKhl8'
+            //'Cookie': 'sails.sid=s%3AK_iBFKB4q4gBOQ9YDaHT8ksqKl4uRkXe.wdp2PBXGFra3CVv09SVoPMkL%2BV4GmoyxQpX0XSeKhl8'
         }
 
 
