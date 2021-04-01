@@ -44,8 +44,9 @@ export class LoginComponent implements OnInit {
 
         this.authService.login(email, password).subscribe(
             data => {
-                   localStorage.setItem("isLoggedIn", "true");
+                    localStorage.setItem("isLoggedIn", "true");
                     
+                    console.log(data)
 
                     this.router.navigateByUrl(this.returnUrl);
 

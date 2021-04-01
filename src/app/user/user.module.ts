@@ -5,13 +5,16 @@ import { UserRoutingModule } from './user-routing.module';
 import { AdduserComponent } from './adduser/adduser.component';
 import { DeleteuserComponent } from './deleteuser/deleteuser.component';
 import { EdituserComponent } from './edituser/edituser.component';
+import { ListComponent } from './list/list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
-  declarations: [AdduserComponent, DeleteuserComponent, EdituserComponent],
+  declarations: [AdduserComponent, DeleteuserComponent, EdituserComponent, ListComponent],
   imports: [
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    HttpClientModule
   ]
 })
 export class UserModule { }
