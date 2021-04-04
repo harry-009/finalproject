@@ -1,4 +1,5 @@
 export interface User {
+    id:number,
     companyName: string,
     createdAt: string,
     email: string,

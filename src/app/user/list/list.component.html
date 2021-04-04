@@ -1,24 +1,41 @@
-<h2>Users List</h2>
+<h2 class="text-center">Users List</h2>
 
-<h3>Total users: {{response?.total}}</h3>
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let u of users">
-        <td>{{u?.firstName}}</td>
-        <td>{{u?.lastName}}</td>
-        <td>{{u?.email}}</td>
-      </tr>
-    </tbody>
-  </table>
-<!-- <ul>
-    <li *ngFor="let u of users">
-        {{u?.firstName}}
-    </li>
-</ul> -->
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="float-left">Total users: {{response?.total}}</h3>
+        <a routerLink="/adduser" class="btn btn-primary float-right">Add User</a>
+    </div>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-striped">
+        <thead>
+            <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+            <td>{{u?.firstName}}</td>
+            <td>{{u?.lastName}}</td>
+            <td>{{u?.email}}</td>
+            <td>
+                    <button class="btn btn-sm btn-primary">Edit</button>
+                    &nbsp;|&nbsp;
+                    <button class="btn btn-sm btn-danger" (click)="deleteUser(u.id)">Delete</button>
+            </td>
+            </tr>
+        </tbody>
+        </table>
+        <!-- <ul>
+            <li *ngFor="let u of users">
+                {{u?.firstName}}
+            </li>
+        </ul> -->
+    </div>
+</div>

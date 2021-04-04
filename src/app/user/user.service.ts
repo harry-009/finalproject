@@ -1,4 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -30,7 +31,47 @@ export class UserService {
             //'Cookie': 'sails.sid=s%3AK_iBFKB4q4gBOQ9YDaHT8ksqKl4uRkXe.wdp2PBXGFra3CVv09SVoPMkL%2BV4GmoyxQpX0XSeKhl8'
         }
 
-
         return new HttpHeaders(headerDict);
+    }
+
+    addUser(firstName:string, lastName:string, email:string, mobileNo:string, companyName:string, role:string){
+        let api = `http://198.251.65.146:4605/users`;
+
+        let requestOptions = {
+            headers: this.getHeaders(),
+        }
+
+        let body = {
+            address: "",
+            city: "",
+            companyName:companyName,
+            country: "",
+            description: "",
+            email: email,
+            expMonths: "",
+            expYear: "",
+            firstName:firstName,
+            image: "",
+            isFeatured: null,
+            lastName: lastName,
+            linkedinProfile: "",
+            mobileNo: mobileNo,
+            rank: "",
+            role: "U",
+            skills: [],
+            zipcode: "",
+        }
+
+        return this.httpClient.post(api, body, requestOptions);
+    }
+
+    deleteUser(id: string) {
+        let api = `http://198.251.65.146:4605/delete?id=${id}&model=users`;
+
+        let requestOptions = {
+            headers: this.getHeaders(),
+        }
+
+        return this.httpClient.delete(api, requestOptions);
     }
 }

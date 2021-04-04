@@ -27,9 +27,17 @@ export class ListComponent implements OnInit {
         this.userService.getAllUsers().subscribe(
             data => {
                 this.response = JSON.parse(JSON.stringify(data));
-                this.users = this.response.users; 
-                
+                this.users = this.response.users;
             }
         );
+    }
+
+    deleteUser(id: string) {
+        if (confirm("Are you sure to delete?")) {
+            this.userService.deleteUser(id).subscribe(data => {
+                this.getAllUsers();
+                alert("Deleted successfully.");
+            });
+        }
     }
 }
