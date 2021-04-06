@@ -1,5 +1,5 @@
 export interface User {
-    id:number,
+    id: string,
     companyName: string,
     createdAt: string,
     email: string,
@@ -7,4 +7,5 @@ export interface User {
     fullName: string,
     lastName: string,
     mobileNo: string,
+    role?: string,
 }

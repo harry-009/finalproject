@@ -10,13 +10,24 @@ export class UserService {
     constructor(private httpClient: HttpClient) { }
 
     getAllUsers() {
-        let api = `http://198.251.65.146:4605/users?page=&search=`;
+        let api = `http://198.251.65.146:4605/users?page=1&search=`;
 
         let requestOptions = {
             headers: this.getHeaders(),
         }
 
         return this.httpClient.get(api, requestOptions);
+    }
+
+    getUser(id:string){
+        let api = `http://198.251.65.146:4605/user?id=${id}`;
+
+        let requestOptions = {
+            headers: this.getHeaders(),
+        }
+
+        return this.httpClient.get(api, requestOptions);
+
     }
 
     private getHeaders() {
@@ -74,4 +85,37 @@ export class UserService {
 
         return this.httpClient.delete(api, requestOptions);
     }
+    
+
+    updateUser(id:string, firstName:string, lastName:string, email:string, mobileNo:string, companyName:string, role:string){
+        let api = `http://198.251.65.146:4605/editProfile?id=${id}`;
+
+        let requestOptions = {
+            headers: this.getHeaders(),
+        }
+
+        let body = {
+            address: "",
+            city: "",
+            companyName:companyName,
+            country: "",
+            description: "",
+            email: email,
+            expMonths: "",
+            expYear: "",
+            firstName:firstName,
+            image: "",
+            isFeatured: null,
+            lastName: lastName,
+            linkedinProfile: "",
+            mobileNo: mobileNo,
+            rank: "",
+            role: role,
+            skills: [],
+            zipcode: "",
+        }
+
+        return this.httpClient.put(api, body, requestOptions);
+    }
+
 }
